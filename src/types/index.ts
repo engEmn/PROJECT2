@@ -1,0 +1,1 @@
+export type ProductNametype="title"|"description"|"imageURL"|"price"
