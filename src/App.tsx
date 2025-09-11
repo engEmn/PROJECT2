@@ -1,7 +1,7 @@
 import ProductCard from "./component/ProductCard";
 import { productList, formInputsList, colors, categories } from "./data";
 import Model from "./component/UI/Model";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "@headlessui/react";
 import Input from "./component/UI/Input";
 import type { IProduct } from "./interfaces";
@@ -52,14 +52,14 @@ const App = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  function openedit() {
-    setIsOpeneditmodel(true);
-  }
+  const openedit=useCallback(() =>
+    setIsOpeneditmodel(true),[]);
+  
   function closeeditModal() {
     setIsOpeneditmodel(false);
   }
   const closeConfirmModal = () => setIsOpenConfirmModal(false);
-  const openConfirmModal = () => setIsOpenConfirmModal(true);
+  const openConfirmModal = useCallback(() => setIsOpenConfirmModal(true),[  ]);
 
   const onChangeHandel = (event: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target;

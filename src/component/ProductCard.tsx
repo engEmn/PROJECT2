@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { IProduct } from "../interfaces";
 
 
@@ -73,6 +74,6 @@ const ProductCard = ({
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);
 
 
