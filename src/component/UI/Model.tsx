@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, type ReactNode } from "react";
+import { Fragment, memo, type ReactNode } from "react";
 
 interface IProps {
   isOpen: boolean;
@@ -70,4 +70,4 @@ const Model = ({
   );
 };
 
-export default Model;
+export default memo(Model);
